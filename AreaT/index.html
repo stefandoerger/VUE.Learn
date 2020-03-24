@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Vue</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script type="text/javascript" src="assets/js/lib/vue/vue.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/css/lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/lib/fontawesome/all.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    </head>
+    <body id="app">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark nava">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand bralink" href="#">{{ title }} <span> to {{ inputtext }}</a>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li> -->
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model="inputtext" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+
+
+        <div class="container">
+                <!-- Always when Grid is used, needs Container and Row -->
+                <div class="row">
+                        <div class="col-12">
+                            <div class="content">
+                                    <h1> {{ title }} </h1>
+                                    <h2> {{ subtitle }} </h2>
+                                    <br>
+                                    <input type="text" name="" id="input" v-model="inputtext">
+                                    <br><br>
+                                    <h3> {{ topFilmTitle }} </h3>
+                                    <ul>
+                                        <br>
+                                        <li v-for="name in names" v-text="name"></li>
+                                        <!-- <li v-for="name in names"> {{ name }} </li> -->
+                                    </ul>
+                                    <h3>Add your favourite Film or Series this Week</h3>
+                                    <br>
+                                    <input type="text">
+                                    <button class="btn" v-on:click="addFilm">ADD</button>
+                                    <!-- <button class="btn" v-on:click="addFilm">ADD</button> -->
+                                    <!-- Use the functions addFilm from methods -->
+                            </div>
+                        </div>
+                </div>
+
+        </div>
+
+        <script>
+
+            let app = new Vue({
+                el: '#app',
+                data: {
+                title: 'sdF',
+                subtitle: 'SD Film Data Base',
+                inputtext: 'Search your Shit ...',
+                topFilmTitle: 'Popular this week',
+                names: ['True Detective', 'Bob & Dave', 'Halt and Catch Fire']
+                },
+
+            methods: {
+                addFilm() {
+                    alert('Add a name');
+                }
+            }
+
+            // mounted() {
+            //     alert('Everything Up and Running');
+            //     // Function to check if everything is fine
+            // }
+
+            });
+
+          </script>
+
+    <script type="text/javascript" src="assets/js/lib/jquery/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>
