@@ -2,4 +2,4 @@
 Learning Vue
 
 API:
-https://rapidapi.com/rapidapi/api/movie-database-imdb-alternative/details
+https://rapidapi.com/rapidapi/api/movie-database-imdb-alternative
