@@ -4,7 +4,7 @@ Vue.component('actor-list', {
 
     template: `
         <div>
-            <h3> {{ actorTitle }} </h3>
+            <h3> {{ actorTitle }} (via Components) </h3>
             <actor v-for="actor in actors"> {{ actor.actor }} </actor>
         </div>
         `,
@@ -28,8 +28,9 @@ Vue.component('actor', {
 
 });
 
+
 new Vue({
 
-    el: '#actors'
+    el: '#app'
 
 });
