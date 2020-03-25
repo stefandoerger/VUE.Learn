@@ -15,10 +15,26 @@ h1,
     border-color: #ffd700;
 }
 
-.btn-outline-success:hover,
-button.btn {
-    background-color: #ffd700!important;
+.sdfGold {
+    background-color: #ffd700;
     color: #1b283e;
+}
+
+.sdfGoldText {
+    color: #ffd700!important;
+}
+
+a.sdfGoldText {
+    cursor: cell;
+}
+
+.sdfDarkText {
+    color: #1b283e;
+}
+
+.sdfGoldClicked {
+    background-color: #1b283e;
+    color: #ffd700;
 }
 
 .nava {
@@ -59,6 +75,6 @@ h1 {
     color: #ffd700;
 }
 
-ul {
+/* ul {
     list-style: none;
-}
+} */

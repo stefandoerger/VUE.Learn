@@ -7,7 +7,7 @@
         <script type="text/javascript" src="assets/js/lib/vue/vue.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="assets/css/lib/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/lib/fontawesome/all.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/lib/fontawesome/all.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
     <body id="app">
@@ -31,8 +31,8 @@
                 </li> -->
               </ul>
               <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model="inputtext" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model="inputtext" aria-label="Searbch">
+                <button :class="className" class="tn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
             </div>
           </nav>
@@ -49,51 +49,109 @@
                                     <input type="text" name="" id="input" v-model="inputtext">
                                     <br><br>
                                     <h3> {{ topFilmTitle }} </h3>
+
                                     <ul>
                                         <br>
                                         <li v-for="name in names" v-text="name"></li>
                                         <!-- <li v-for="name in names"> {{ name }} </li> -->
                                     </ul>
+
                                     <h3>Add your favourite Film or Series this Week</h3>
+
                                     <br>
-                                    <input type="text">
-                                    <button class="btn" v-on:click="addFilm">ADD</button>
+
+                                    <input id="input" type="text" v-model="newFilm">
+
                                     <!-- <button class="btn" v-on:click="addFilm">ADD</button> -->
-                                    <!-- Use the functions addFilm from methods -->
+                                    <!-- <button :title="btnTitle" :class="className" @click="addFilm">ADD</button> -->
+                                        <!-- Use the functions addFilm from methods -->
+
+                                    <!-- Class with condition -->
+                                    <button :title="btnTitle" class="sdfGold" :class="{ 'sdfGoldClicked' : sdfGoldC}" @click="handleAddandToggleClick">ADD</button>
+                                    <!-- Only applies class, if it is true (existing) -->
+                                    <!-- Simple if else for class via true/false variable -->
+                                    <!-- For mutlitple functions, put them in a handler fucntion (or however you wanna call it) and put there two functions -->
+
+                                    <br>
+                                    <br>
+
+                                    <h3>Number one is "{{ names[0] }}"</h3>
+                                    <!-- <h3>Reversed Number three is "{{ names[2].split('').reverse().join('') }}"</h3> -->
+                                    <h3>Reversed "{{ reversedMessage }}"</h3>
+
+                                    <br>
+
+                                    <h2>Directors</h2>
+
+                                    <br>
+
+                                    <ul>
+                                        <li v-for="director in directors" v-text="director.name"></li>
+                                    </ul>
+
+                                    <br>
+
+                                    <h3>Directors with <span class="sdfGoldText">Oscars</span></h3>
+
+                                    <br>
+
+                                    <!-- <ul>
+                                        <li v-for="director in directors" v-if="director.oscar" v-text="director.name"></li>
+                                    </ul> -->
+
+                                    <!-- OR Shorter, via Computed Property, where it is already filtered -->
+
+                                    <ul>
+                                        <li v-for="director in gotOscar" v-text="director.name"></li>
+                                    </ul>
+
+                                    <br>
+
+                                    <h3>Directors <span class="sdfDarkText">without </span><span class="sdfGoldText">Oscars</span></h3>
+
+                                    <br>
+
+                                    <ul>
+                                        <!-- <li v-for="director in gotNoOscar" v-text="director.name"></li> -->
+                                        <li v-for="director in gotNoOscar">
+                                            {{ director.name }}
+                                            <!-- Here makes the "long" for loops sense, because I want to add to each a link -->
+                                            <a class="sdfGoldText" @click="donateAnOscar(director)"> <!-- function with input necessary -->
+                                                Donate an Oscar
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                    <br>
+
+                                    <section id="actors">
+
+                                        <actor-list actorTitle="Actors"></actor-list>
+
+                                    </section>
+
+
+
+
+
+
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <small>Today is <span v-text="new Date()"></span>, to be precisely precise.</small>
+
                             </div>
                         </div>
                 </div>
 
         </div>
 
-        <script>
 
-            let app = new Vue({
-                el: '#app',
-                data: {
-                title: 'sdF',
-                subtitle: 'SD Film Data Base',
-                inputtext: 'Search your Shit ...',
-                topFilmTitle: 'Popular this week',
-                names: ['True Detective', 'Bob & Dave', 'Halt and Catch Fire']
-                },
+        <script type="text/javascript" src="assets/js/lib/jquery/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/app.js"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
 
-            methods: {
-                addFilm() {
-                    alert('Add a name');
-                }
-            }
-
-            // mounted() {
-            //     alert('Everything Up and Running');
-            //     // Function to check if everything is fine
-            // }
-
-            });
-
-          </script>
-
-    <script type="text/javascript" src="assets/js/lib/jquery/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/lib/bootstrap/js/bootstrap.min.js"></script>
     </body>
 </html>
