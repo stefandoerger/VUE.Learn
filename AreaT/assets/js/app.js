@@ -65,9 +65,9 @@ let app = new Vue({
 
     },
 
-// mounted() {
-//     alert('Everything Up and Running');
-//     // Function to check if everything is fine
-// }
+    mounted() {
+        // alert('Everything Up and Running');
+        // Function to check if everything is fine
+    }
 
 });

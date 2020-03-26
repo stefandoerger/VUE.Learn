@@ -4,148 +4,160 @@
         <title>Test Vue</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <script type="text/javascript" src="assets/js/lib/vue/vue.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="assets/css/lib/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/lib/fontawesome/all.min.css">
+        <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
-    <body id="app">
+    <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark nava">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand bralink" href="#">{{ title }} <span> to {{ inputtext }}</a>
+        <div id="app">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark nava">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand bralink" href="#">
+                    {{ title }}
+                    <img class="logo" src="/VUE.Learn/AreaT/assets/img/filmLogo.svg" alt="">
+                    <span> to {{ inputtext }}</span>
+                </a>
 
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                  <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
-                </li>
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-                </li> -->
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model="inputtext" aria-label="Searbch">
-                <button :class="className" class="tn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
-            </div>
-          </nav>
-
-
-        <div class="container">
-                <!-- Always when Grid is used, needs Container and Row -->
-                <div class="row">
-                        <div class="col-12">
-                            <div class="content">
-                                    <h1> {{ title }} </h1>
-                                    <h2> {{ subtitle }} </h2>
-                                    <br>
-                                    <input type="text" name="" id="input" v-model="inputtext">
-                                    <br><br>
-                                    <h3> {{ topFilmTitle }} </h3>
-
-                                    <ul>
-                                        <br>
-                                        <li v-for="name in names" v-text="name"></li>
-                                        <!-- <li v-for="name in names"> {{ name }} </li> -->
-                                    </ul>
-
-                                    <h3>Add your favourite Film or Series this Week</h3>
-
-                                    <br>
-
-                                    <input id="input" type="text" v-model="newFilm">
-
-                                    <!-- <button class="btn" v-on:click="addFilm">ADD</button> -->
-                                    <!-- <button :title="btnTitle" :class="className" @click="addFilm">ADD</button> -->
-                                        <!-- Use the functions addFilm from methods -->
-
-                                    <!-- Class with condition -->
-                                    <button :title="btnTitle" class="sdfGold" :class="{ 'sdfGoldClicked' : sdfGoldC}" @click="handleAddandToggleClick">ADD</button>
-                                    <!-- Only applies class, if it is true (existing) -->
-                                    <!-- Simple if else for class via true/false variable -->
-                                    <!-- For mutlitple functions, put them in a handler fucntion (or however you wanna call it) and put there two functions -->
-
-                                    <br>
-                                    <br>
-
-                                    <h3>Number one is "{{ names[0] }}"</h3>
-                                    <!-- <h3>Reversed Number three is "{{ names[2].split('').reverse().join('') }}"</h3> -->
-                                    <h3>Reversed "{{ reversedMessage }}"</h3>
-
-                                    <br>
-
-                                    <h2>Directors</h2>
-
-                                    <br>
-
-                                    <ul>
-                                        <li v-for="director in directors" v-text="director.name"></li>
-                                    </ul>
-
-                                    <br>
-
-                                    <h3>Directors with <span class="sdfGoldText">Oscars</span></h3>
-
-                                    <br>
-
-                                    <!-- <ul>
-                                        <li v-for="director in directors" v-if="director.oscar" v-text="director.name"></li>
-                                    </ul> -->
-
-                                    <!-- OR Shorter, via Computed Property, where it is already filtered -->
-
-                                    <ul>
-                                        <li v-for="director in gotOscar" v-text="director.name"></li>
-                                    </ul>
-
-                                    <br>
-
-                                    <h3>Directors <span class="sdfDarkText">without </span><span class="sdfGoldText">Oscars</span></h3>
-
-                                    <br>
-
-                                    <ul>
-                                        <!-- <li v-for="director in gotNoOscar" v-text="director.name"></li> -->
-                                        <li v-for="director in gotNoOscar">
-                                            {{ director.name }}
-                                            <!-- Here makes the "long" for loops sense, because I want to add to each a link -->
-                                            <a class="sdfGoldText" @click="donateAnOscar(director)"> <!-- function with input necessary -->
-                                                Donate an Oscar
-                                            </a>
-                                        </li>
-
-                                    </ul>
-
-                                    <br>
-
-
-                                    <actor-list actor-title="Actors"></actor-list>
-
-
-
-
-
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <small>Today is <span v-text="new Date()"></span>, to be precisely precise.</small>
-
-                            </div>
-                        </div>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                      <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#">Disabled</a>
+                    </li> -->
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model="inputtext" aria-label="Searbch">
+                    <button :class="className" class="tn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
                 </div>
+              </nav>
 
+
+            <div class="container">
+                    <!-- Always when Grid is used, needs Container and Row -->
+                    <div class="row">
+                            <div class="col-12">
+                                <div class="content">
+                                        <h1> {{ title }} </h1>
+                                        <h2> {{ subtitle }} </h2>
+                                        <br>
+                                        <input type="text" name="" id="input" v-model="inputtext">
+                                        <br><br>
+                                        <h3> {{ topFilmTitle }} </h3>
+
+                                        <ul>
+                                            <br>
+                                            <li v-for="name in names" v-text="name"></li>
+                                            <!-- <li v-for="name in names"> {{ name }} </li> -->
+                                        </ul>
+
+                                        <h3>Add your favourite Film or Series this Week</h3>
+
+                                        <br>
+
+                                        <input id="inputTwo" type="text" v-model="newFilm">
+
+                                        <!-- <button class="btn" v-on:click="addFilm">ADD</button> -->
+                                        <!-- <button :title="btnTitle" :class="className" @click="addFilm">ADD</button> -->
+                                            <!-- Use the functions addFilm from methods -->
+
+                                        <!-- Class with condition -->
+                                        <button :title="btnTitle" class="sdfGold" :class="{ 'sdfGoldClicked' : sdfGoldC}" @click="handleAddandToggleClick">ADD</button>
+                                        <!-- Only applies class, if it is true (existing) -->
+                                        <!-- Simple if else for class via true/false variable -->
+                                        <!-- For mutlitple functions, put them in a handler fucntion (or however you wanna call it) and put there two functions -->
+
+                                        <br>
+                                        <br>
+
+                                        <h3>Number one is "{{ names[0] }}"</h3>
+                                        <!-- <h3>Reversed Number three is "{{ names[2].split('').reverse().join('') }}"</h3> -->
+                                        <h3>Reversed "{{ reversedMessage }}"</h3>
+
+                                        <br>
+
+                                        <h2>Directors</h2>
+
+                                        <br>
+
+                                        <ul>
+                                            <li v-for="director in directors" v-text="director.name"></li>
+                                        </ul>
+
+                                        <br>
+
+                                        <h3>Directors with <span class="sdfGoldText">Oscars</span></h3>
+
+                                        <br>
+
+                                        <!-- <ul>
+                                            <li v-for="director in directors" v-if="director.oscar" v-text="director.name"></li>
+                                        </ul> -->
+
+                                        <!-- OR Shorter, via Computed Property, where it is already filtered -->
+
+                                        <ul>
+                                            <li v-for="director in gotOscar" v-text="director.name"></li>
+                                        </ul>
+
+                                        <br>
+
+                                        <h3>Directors <span class="sdfDarkText">without </span><span class="sdfGoldText">Oscars</span></h3>
+
+                                        <br>
+
+                                        <ul>
+                                            <!-- <li v-for="director in gotNoOscar" v-text="director.name"></li> -->
+                                            <li v-for="director in gotNoOscar">
+                                                {{ director.name }}
+                                                <!-- Here makes the "long" for loops sense, because I want to add to each a link -->
+                                                <a class="sdfGoldText" @click="donateAnOscar(director)"> <!-- function with input necessary -->
+                                                    Donate an Oscar
+                                                </a>
+                                            </li>
+
+                                        </ul>
+
+                                        <br>
+
+
+                                        <actor-list actor-title="Actors"></actor-list>
+
+
+
+
+
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <small>Today is <span v-text="new Date()"></span>, to be precisely precise.</small>
+
+                                </div>
+                            </div>
+                    </div>
+
+            </div>
         </div>
 
 
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- <script type="text/javascript" src="assets/js/lib/vue/vue.js"></script> -->
+
         <script type="text/javascript" src="assets/js/lib/jquery/jquery-3.4.1.min.js"></script>
-        <script type="text/javascript" src="assets/js/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/lib/bootstrap/bootstrap.min.js"></script>
+        <!-- ALT -->
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+
         <script type="text/javascript" src="assets/js/app.js"></script>
         <script type="text/javascript" src="assets/js/main.js"></script>
 

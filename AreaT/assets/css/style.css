@@ -55,6 +55,9 @@ a.sdfGoldText {
     color: #fdfdfd;
     font-size: .5em;
 }
+.bralink .logo {
+    height: .75em;
+}
 
 .bg-dark {
   background-color: #1b283e !important;
