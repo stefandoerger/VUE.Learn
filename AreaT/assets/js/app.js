@@ -71,7 +71,11 @@ let app = new Vue({
     mounted() {
         // const apiURL = '';
 
-        axios.get('https://movie-database-imdb-alternative.p.rapidapi.com/').then(response => this.bloodlines = response.data);
+        axios.get('https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/tt1375666', { "headers": {"x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com", "x-rapidapi-key": "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"}}).then(response => this.bloodlines = response.data);
+
+        // axios.get('https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/tt1375666', { headers: { Authorization: "X-RapidAPI-Key", "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"}).then(response => this.bloodlines = response.data);
+
+        // axios.get('https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/tt1375666?api-key=f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab').then(response => this.bloodlines = response.data);
 
         // axios.get('https://esi.evetech.net/latest/universe/bloodlines/?datasource=tranquility&language=en-us').then(response => this.bloodlines = response.data);
         // axios.get('https://esi.evetech.net/latest/universe/races/?datasource=tranquility&language=en-us').then(response => this.races = response.data);

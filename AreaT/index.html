@@ -132,7 +132,11 @@
                                         <actor-list actor-title="Actors"></actor-list>
 
                                         <br>
-                                        <h2>Stuff</h2>
+                                        <h2>Film title (via API)</h2>
+
+                                        <p>{{ bloodlines.title }}</p>
+                                        <p>{{ bloodlines.year }}</p>
+
                                         <div class="table-responsive" v-if="bloodlines.length">
                                           <table class="table table-striped table-sm">
                                               <thead>
@@ -143,8 +147,8 @@
                                               </thead>
                                               <tbody v-for="bloodline in bloodlines">
                                                   <tr>
-                                                      <td>{{ bloodline.corporation_id }}</td>
-                                                      <td>{{ bloodline.name }}</td>
+                                                      <td>{{ bloodline.title }}</td>
+                                                      <td>{{ bloodline.year }}</td>
                                                   </tr>
                                               </tbody>
                                           </table>
