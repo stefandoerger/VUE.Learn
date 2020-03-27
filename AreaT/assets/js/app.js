@@ -7,7 +7,7 @@ let app = new Vue({
         subtitle: 'SD Film Data Base',
         inputtext: 'Find',
         topFilmTitle: 'Popular this week',
-        names: ['True Detective', 'Bob & Dave', 'Halt and Catch Fire'],
+        names: ['Once Upon a Time ... in Hollywood', 'True Detective', 'Joker', 'Halt and Catch Fire'],
         newFilm: '',
         btnTitle: 'Add a film',
         className: 'sdfGold',
@@ -23,6 +23,7 @@ let app = new Vue({
         ],
 
             onceUponaTime: [],
+            // details: [],
 
     },
 

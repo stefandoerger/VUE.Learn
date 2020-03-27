@@ -82,6 +82,10 @@ td {
     color: #fdfdfd;
 }
 
+.character {
+    font-style: italic;
+}
+
 /* ul {
     list-style: none;
 } */

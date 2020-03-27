@@ -78,6 +78,47 @@
                                         <br>
                                         <br>
 
+                                        <br>
+                                        <div class="container">
+
+                                          <div class="row">
+                                            <div class="col-sm-6">
+                                                <h2>Film of the Week (via API)</h2>
+                                                <h3>{{ onceUponaTime.title }} {{ onceUponaTime.year }}</h3>
+
+                                                <!-- <film-cast></film-cast> -->
+
+
+                                                <div class="table-responsive" v-if="onceUponaTime.length">
+                                                    <table class="table table-striped table-sm">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Actor Name</th>
+                                                                <th class="character">Role in Film</th>
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody v-for="cast in onceUponaTime.cast">
+                                                          <tr>
+                                                              <td>{{ cast.actor }}</td>
+                                                              <td class="character">"{{ cast.character }}"</td>
+                                                          </tr>
+                                                      </tbody>
+
+                                                    </table>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <img v-bind:src="onceUponaTime.poster" class="img-fluid" alt="Responsive image">
+                                            </div>
+                                          </div>
+
+                                      </div>
+
+                                      <br>
+                                      <br>
+
                                         <h3>Number one is "{{ names[0] }}"</h3>
                                         <!-- <h3>Reversed Number three is "{{ names[2].split('').reverse().join('') }}"</h3> -->
                                         <h3>Reversed "{{ reversedMessage }}"</h3>
@@ -132,40 +173,6 @@
                                         <actor-list actor-title="Actors"></actor-list>
 
 
-                                            <br>
-                                            <div class="container">
-
-                                              <div class="row">
-                                                <div class="col-sm-6">
-                                                    <h2>Film of the Week (via API)</h2>
-                                                    <h3>{{ onceUponaTime.title }} {{ onceUponaTime.year }}</h3>
-
-                                                    <div class="table-responsive" v-if="onceUponaTime.length">
-                                                        <table class="table table-striped table-sm">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Actor Name</th>
-                                                                    <th>Role in Film</th>
-                                                                </tr>
-                                                            </thead>
-
-                                                            <tbody v-for="cast in onceUponaTime.cast">
-                                                              <tr>
-                                                                  <td>{{ cast.actor }}</td>
-                                                                  <td>{{ cast.character }}</td>
-                                                              </tr>
-                                                          </tbody>
-
-                                                        </table>
-                                                      </div>
-
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <img v-bind:src="onceUponaTime.poster" class="img-fluid" alt="Responsive image">
-                                                </div>
-                                              </div>
-
-                                          </div>
 
 
 

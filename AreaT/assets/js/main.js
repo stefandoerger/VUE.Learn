@@ -5,7 +5,9 @@ Vue.component('actor-list', {
     template: `
         <div>
             <h3> {{ actorTitle }} (via Components) </h3>
-            <actor v-for="actor in actors"> {{ actor.actor }} </actor>
+            <ul>
+                <actor v-for="actor in actors"> {{ actor.actor }} </actor>
+            </ul>
         </div>
         `,
 
@@ -27,3 +29,33 @@ Vue.component('actor', {
         '<li><slot></slot></li>',
 
 });
+
+
+// Vue.component('film-cast', {
+
+//     template: `
+//         <div>
+
+//             <div class="table-responsive" v-if="onceUponaTime.length">
+//                 <table class="table table-striped table-sm">
+//                     <thead>
+//                         <tr>
+//                             <th>Actor Name</th>
+//                             <th class="character">Role in Film</th>
+//                         </tr>
+//                     </thead>
+
+//                     <tbody v-for="cast in onceUponaTime.cast">
+//                         <tr>
+//                             <td>{{ cast.actor }}</td>
+//                             <td class="character">{{ cast.character }}</td>
+//                         </tr>
+//                     </tbody>
+
+//                 </table>
+//             </div>
+
+//         </div>
+//         `,
+
+// });
