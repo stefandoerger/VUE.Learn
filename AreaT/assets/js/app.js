@@ -69,8 +69,12 @@ let app = new Vue({
     },
 
     mounted() {
-        axios.get('https://esi.evetech.net/latest/universe/bloodlines/?datasource=tranquility&language=en-us').then(response => this.bloodlines = response.data);
-        axios.get('https://esi.evetech.net/latest/universe/races/?datasource=tranquility&language=en-us').then(response => this.races = response.data);
+        // const apiURL = '';
+
+        axios.get('https://movie-database-imdb-alternative.p.rapidapi.com/').then(response => this.bloodlines = response.data);
+
+        // axios.get('https://esi.evetech.net/latest/universe/bloodlines/?datasource=tranquility&language=en-us').then(response => this.bloodlines = response.data);
+        // axios.get('https://esi.evetech.net/latest/universe/races/?datasource=tranquility&language=en-us').then(response => this.races = response.data);
     }
 
 });
