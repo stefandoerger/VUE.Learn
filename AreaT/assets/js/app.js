@@ -5,7 +5,7 @@ let app = new Vue({
 
         title: 'sdF',
         subtitle: 'SD Film Data Base',
-        inputtext: 'Search your Shit ...',
+        inputtext: 'Find',
         topFilmTitle: 'Popular this week',
         names: ['True Detective', 'Bob & Dave', 'Halt and Catch Fire'],
         newFilm: '',
@@ -22,8 +22,7 @@ let app = new Vue({
 
         ],
 
-            bloodlines: [],
-            races: [],
+            onceUponaTime: [],
 
     },
 
@@ -71,11 +70,7 @@ let app = new Vue({
     mounted() {
         // const apiURL = '';
 
-        axios.get('https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/tt1375666', { "headers": {"x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com", "x-rapidapi-key": "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"}}).then(response => this.bloodlines = response.data);
-
-        // axios.get('https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/tt1375666', { headers: { Authorization: "X-RapidAPI-Key", "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"}).then(response => this.bloodlines = response.data);
-
-        // axios.get('https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/tt1375666?api-key=f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab').then(response => this.bloodlines = response.data);
+        axios.get('https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/tt7131622', { "headers": {"x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com", "x-rapidapi-key": "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"}}).then(response => this.onceUponaTime = response.data);
 
         // axios.get('https://esi.evetech.net/latest/universe/bloodlines/?datasource=tranquility&language=en-us').then(response => this.bloodlines = response.data);
         // axios.get('https://esi.evetech.net/latest/universe/races/?datasource=tranquility&language=en-us').then(response => this.races = response.data);

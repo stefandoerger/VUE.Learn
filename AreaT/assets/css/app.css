@@ -20,7 +20,8 @@ h1,
     color: #1b283e;
 }
 
-.sdfGoldText {
+.sdfGoldText,
+thead {
     color: #ffd700!important;
 }
 
@@ -71,11 +72,14 @@ a.sdfGoldText {
     max-width: 100%;
 }
 
-
 h1 {
     font-size: 3em;
     font-weight: 600;
     color: #ffd700;
+}
+
+td {
+    color: #fdfdfd;
 }
 
 /* ul {
