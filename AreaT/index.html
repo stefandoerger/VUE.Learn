@@ -40,8 +40,7 @@
                 </div>
               </nav>
 
-
-            <div class="container">
+              <div class="container">
                     <!-- Always when Grid is used, needs Container and Row -->
                     <div class="row">
                             <div class="col-12">
@@ -49,34 +48,7 @@
                                         <h1> {{ title }} </h1>
                                         <h2> {{ subtitle }} </h2>
                                         <br>
-                                        <input type="text" name="" id="input" v-model="inputtext">
-                                        <br><br>
-                                        <h3> {{ topFilmTitle }} </h3>
-
-                                        <ul>
-                                            <br>
-                                            <li v-for="name in names" v-text="name"></li>
-                                            <!-- <li v-for="name in names"> {{ name }} </li> -->
-                                        </ul>
-
-                                        <h3>Add your favourite Film or Series this Week</h3>
-
-                                        <br>
-
-                                        <input id="inputTwo" type="text" v-model="newFilm">
-
-                                        <!-- <button class="btn" v-on:click="addFilm">ADD</button> -->
-                                        <!-- <button :title="btnTitle" :class="className" @click="addFilm">ADD</button> -->
-                                            <!-- Use the functions addFilm from methods -->
-
-                                        <!-- Class with condition -->
-                                        <button :title="btnTitle" class="sdfGold" :class="{ 'sdfGoldClicked' : sdfGoldC}" @click="handleAddandToggleClick">ADD</button>
-                                        <!-- Only applies class, if it is true (existing) -->
-                                        <!-- Simple if else for class via true/false variable -->
-                                        <!-- For mutlitple functions, put them in a handler fucntion (or however you wanna call it) and put there two functions -->
-
-                                        <br>
-                                        <br>
+                                        <!-- <input type="text" name="" id="input" v-model="inputtext"> -->
 
                                         <br>
                                         <div class="container">
@@ -115,6 +87,34 @@
                                           </div>
 
                                       </div>
+
+                                      <br>
+                                      <br>
+
+                                      <br><br>
+                                      <h3> {{ topFilmTitle }} </h3>
+
+                                      <ul>
+                                          <br>
+                                          <li v-for="name in names" v-text="name"></li>
+                                          <!-- <li v-for="name in names"> {{ name }} </li> -->
+                                      </ul>
+
+                                      <h3>Add your favourite Film or Series this Week</h3>
+
+                                      <br>
+
+                                      <input id="inputTwo" type="text" v-model="newFilm">
+
+                                      <!-- <button class="btn" v-on:click="addFilm">ADD</button> -->
+                                      <!-- <button :title="btnTitle" :class="className" @click="addFilm">ADD</button> -->
+                                          <!-- Use the functions addFilm from methods -->
+
+                                      <!-- Class with condition -->
+                                      <button :title="btnTitle" class="sdfGold" :class="{ 'sdfGoldClicked' : sdfGoldC}" @click="handleAddandToggleClick">ADD</button>
+                                      <!-- Only applies class, if it is true (existing) -->
+                                      <!-- Simple if else for class via true/false variable -->
+                                      <!-- For mutlitple functions, put them in a handler fucntion (or however you wanna call it) and put there two functions -->
 
                                       <br>
                                       <br>
