@@ -29,8 +29,8 @@ Vue.component('actor', {
 });
 
 
-new Vue({
+// new Vue({
 
-    el: '#app'
+//     el: '#app'
 
-});
+// });

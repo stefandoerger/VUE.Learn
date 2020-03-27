@@ -20,7 +20,10 @@ let app = new Vue({
             {name: 'Guest', oscar: false},
             {name: 'W. Anderson', oscar: false},
 
-        ]
+        ],
+
+            bloodlines: [],
+            races: [],
 
     },
 
@@ -66,8 +69,8 @@ let app = new Vue({
     },
 
     mounted() {
-        alert('Everything Up and Running');
-        // Function to check if everything is fine
+        axios.get('https://esi.evetech.net/latest/universe/bloodlines/?datasource=tranquility&language=en-us').then(response => this.bloodlines = response.data);
+        axios.get('https://esi.evetech.net/latest/universe/races/?datasource=tranquility&language=en-us').then(response => this.races = response.data);
     }
 
 });
