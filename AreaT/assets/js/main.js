@@ -31,31 +31,31 @@ Vue.component('actor', {
 });
 
 
-// Vue.component('film-cast', {
+Vue.component('film-cast', {
 
-//     template: `
-//         <div>
+    template: `
+        <div>
 
-//             <div class="table-responsive" v-if="onceUponaTime.length">
-//                 <table class="table table-striped table-sm">
-//                     <thead>
-//                         <tr>
-//                             <th>Actor Name</th>
-//                             <th class="character">Role in Film</th>
-//                         </tr>
-//                     </thead>
+            <div class="table-responsive" v-if="onceUponaTime.length">
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>Actor Name</th>
+                            <th class="character">Role in Film</th>
+                        </tr>
+                    </thead>
 
-//                     <tbody v-for="cast in onceUponaTime.cast">
-//                         <tr>
-//                             <td>{{ cast.actor }}</td>
-//                             <td class="character">{{ cast.character }}</td>
-//                         </tr>
-//                     </tbody>
+                    <tbody v-for="cast in onceUponaTime.cast">
+                        <tr>
+                            <td>{{ cast.actor }}</td>
+                            <td class="character">{{ cast.character }}</td>
+                        </tr>
+                    </tbody>
 
-//                 </table>
-//             </div>
+                </table>
+            </div>
 
-//         </div>
-//         `,
+        </div>
+        `,
 
-// });
+});
