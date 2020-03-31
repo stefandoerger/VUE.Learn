@@ -45,142 +45,110 @@
                     <div class="row">
                             <div class="col-12">
                                 <div class="content">
-                                        <h1> {{ title }} </h1>
-                                        <h2> {{ subtitle }} </h2>
-                                        <br>
-                                        <!-- <input type="text" name="" id="input" v-model="inputtext"> -->
+                                    <h1> {{ title }} </h1>
+                                    <h2> {{ subtitle }} </h2>
+                                    <br>
+                                    <!-- <input type="text" name="" id="input" v-model="inputtext"> -->
 
-                                        <br>
-                                        <div class="container">
+                                    <br>
 
-                                          <div class="row">
-                                            <div class="col-sm-6">
-                                                <h2>Film of the Week (via API)</h2>
-                                                <h3>{{ onceUponaTime.title }} {{ onceUponaTime.year }}</h3>
+                                    <h2>Film of the Week (via API)</h2>
+                                    <h3>{{ onceUponaTime.title }} {{ onceUponaTime.year }}</h3>
 
-                                                <!-- <film-cast></film-cast> -->
+                                    <filmoftheweek></filmoftheweek>
 
+                                </div>
 
-                                                <div class="table-responsive" v-if="onceUponaTime.length">
-                                                    <table class="table table-striped table-sm">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Actor Name</th>
-                                                                <th class="character">Role in Film</th>
-                                                            </tr>
-                                                        </thead>
+                                <br>
+                                <br>
 
-                                                        <tbody v-for="cast in onceUponaTime.cast">
-                                                          <tr>
-                                                              <td>{{ cast.actor }}</td>
-                                                              <td class="character">"{{ cast.character }}"</td>
-                                                          </tr>
-                                                      </tbody>
+                                <br><br>
+                                <h3> {{ topFilmTitle }} </h3>
 
-                                                    </table>
-                                                </div>
+                                <ul>
+                                    <br>
+                                    <li v-for="name in names" v-text="name"></li>
+                                    <!-- <li v-for="name in names"> {{ name }} </li> -->
+                                </ul>
 
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <img v-bind:src="onceUponaTime.poster" class="img-fluid" alt="Responsive image">
-                                            </div>
-                                          </div>
+                                <h3>Add your favourite Film or Series this Week</h3>
 
-                                      </div>
+                                <br>
 
-                                      <br>
-                                      <br>
+                                <input id="inputTwo" type="text" v-model="newFilm">
 
-                                      <br><br>
-                                      <h3> {{ topFilmTitle }} </h3>
+                                <!-- <button class="btn" v-on:click="addFilm">ADD</button> -->
+                                <!-- <button :title="btnTitle" :class="className" @click="addFilm">ADD</button> -->
+                                    <!-- Use the functions addFilm from methods -->
 
-                                      <ul>
-                                          <br>
-                                          <li v-for="name in names" v-text="name"></li>
-                                          <!-- <li v-for="name in names"> {{ name }} </li> -->
-                                      </ul>
+                                <!-- Class with condition -->
+                                <button :title="btnTitle" class="sdfGold" :class="{ 'sdfGoldClicked' : sdfGoldC}" @click="handleAddandToggleClick">ADD</button>
+                                <!-- Only applies class, if it is true (existing) -->
+                                <!-- Simple if else for class via true/false variable -->
+                                <!-- For mutlitple functions, put them in a handler fucntion (or however you wanna call it) and put there two functions -->
 
-                                      <h3>Add your favourite Film or Series this Week</h3>
+                                <br>
+                                <br>
 
-                                      <br>
+                                <h3>Number one is "{{ names[0] }}"</h3>
+                                <!-- <h3>Reversed Number three is "{{ names[2].split('').reverse().join('') }}"</h3> -->
+                                <h3>Reversed "{{ reversedMessage }}"</h3>
 
-                                      <input id="inputTwo" type="text" v-model="newFilm">
+                                <br>
 
-                                      <!-- <button class="btn" v-on:click="addFilm">ADD</button> -->
-                                      <!-- <button :title="btnTitle" :class="className" @click="addFilm">ADD</button> -->
-                                          <!-- Use the functions addFilm from methods -->
+                                <h2>Directors</h2>
 
-                                      <!-- Class with condition -->
-                                      <button :title="btnTitle" class="sdfGold" :class="{ 'sdfGoldClicked' : sdfGoldC}" @click="handleAddandToggleClick">ADD</button>
-                                      <!-- Only applies class, if it is true (existing) -->
-                                      <!-- Simple if else for class via true/false variable -->
-                                      <!-- For mutlitple functions, put them in a handler fucntion (or however you wanna call it) and put there two functions -->
+                                <br>
 
-                                      <br>
-                                      <br>
+                                <ul>
+                                    <li v-for="director in directors" v-text="director.name"></li>
+                                </ul>
 
-                                        <h3>Number one is "{{ names[0] }}"</h3>
-                                        <!-- <h3>Reversed Number three is "{{ names[2].split('').reverse().join('') }}"</h3> -->
-                                        <h3>Reversed "{{ reversedMessage }}"</h3>
+                                <br>
 
-                                        <br>
+                                <h3>Directors with <span class="sdfGoldText">Oscars</span></h3>
 
-                                        <h2>Directors</h2>
+                                <br>
 
-                                        <br>
+                                <!-- <ul>
+                                    <li v-for="director in directors" v-if="director.oscar" v-text="director.name"></li>
+                                </ul> -->
 
-                                        <ul>
-                                            <li v-for="director in directors" v-text="director.name"></li>
-                                        </ul>
+                                <!-- OR Shorter, via Computed Property, where it is already filtered -->
 
-                                        <br>
+                                <ul>
+                                    <li v-for="director in gotOscar" v-text="director.name"></li>
+                                </ul>
 
-                                        <h3>Directors with <span class="sdfGoldText">Oscars</span></h3>
+                                <br>
 
-                                        <br>
+                                <h3>Directors <span class="sdfDarkText">without </span><span class="sdfGoldText">Oscars</span></h3>
 
-                                        <!-- <ul>
-                                            <li v-for="director in directors" v-if="director.oscar" v-text="director.name"></li>
-                                        </ul> -->
+                                <br>
 
-                                        <!-- OR Shorter, via Computed Property, where it is already filtered -->
+                                <ul>
+                                    <!-- <li v-for="director in gotNoOscar" v-text="director.name"></li> -->
+                                    <li v-for="director in gotNoOscar">
+                                        {{ director.name }}
+                                        <!-- Here makes the "long" for loops sense, because I want to add to each a link -->
+                                        <a class="sdfGoldText" @click="donateAnOscar(director)"> <!-- function with input necessary -->
+                                            Donate an Oscar
+                                        </a>
+                                    </li>
 
-                                        <ul>
-                                            <li v-for="director in gotOscar" v-text="director.name"></li>
-                                        </ul>
+                                </ul>
 
-                                        <br>
-
-                                        <h3>Directors <span class="sdfDarkText">without </span><span class="sdfGoldText">Oscars</span></h3>
-
-                                        <br>
-
-                                        <ul>
-                                            <!-- <li v-for="director in gotNoOscar" v-text="director.name"></li> -->
-                                            <li v-for="director in gotNoOscar">
-                                                {{ director.name }}
-                                                <!-- Here makes the "long" for loops sense, because I want to add to each a link -->
-                                                <a class="sdfGoldText" @click="donateAnOscar(director)"> <!-- function with input necessary -->
-                                                    Donate an Oscar
-                                                </a>
-                                            </li>
-
-                                        </ul>
-
-                                        <br>
+                                <br>
 
 
-                                        <actor-list actor-title="Actors"></actor-list>
-
-                                        <film-cast></film-cast>
+                                <actor-list actor-title="Actors"></actor-list>
 
 
 
-
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <small>Today is <span v-text="new Date()"></span>, to be precisely precise.</small>
+                                <br>
+                                <br>
+                                <br>
+                                <small>Today is <span v-text="new Date()"></span>, to be precisely precise.</small>
 
                                 </div>
                             </div>
