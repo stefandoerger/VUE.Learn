@@ -33,18 +33,40 @@ let app = new Vue({
 
     computed: {
 
+        filteredPhotoFeed: function () {
 
+            let photos = this.photoFeed;
+            let authorNameSearchString = this.authorNameSearchString;
+
+            if(!authorNameSearchString){
+              return photos;
+            }
+
+            searchString = authorNameSearchString.trim().toLowerCase();
+
+            photos = photos.filter(function(item){
+              if(item.title.toLowerCase().indexOf(authorNameSearchString) !== -1){
+                return item;
+              }
+            })
+
+            return photos;
+          }
 
     },
 
     mounted() {
-        axios.get('https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/tt7131622', {
+        axios.get('https://imdb-internet-movie-database-unofficial.p.rapidapi.com/', {
             "headers": {
                 "x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com",
                 "x-rapidapi-key": "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"
+            },
+            params: {
+                film: authorNameSearchString
             }
+            // Film ID for search: tt7131622
         }).then(response => {
-            this.onceUponaTime = response.data
+            this.photoFeed = response.data
         });
     }
 
