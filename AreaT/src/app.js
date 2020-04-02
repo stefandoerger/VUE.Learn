@@ -5,40 +5,45 @@ let app = new Vue({
 
         title: 'sdF',
         subtitle: 'SD Film Data Base',
-        inputtext: 'Find',
-        topFilmTitle: 'Popular this week',
-        names: ['Once Upon a Time ... in Hollywood', 'True Detective', 'Joker', 'Halt and Catch Fire'],
-        newFilm: '',
         className: 'sdfGold',
-        sdfGoldC: false,
+        inputText: '',
 
         onceUponaTime: [],
-        authorNameSearchString: "",
-        photoFeed: null
     },
+
+    props: {
+        value: {
+          type: String
+        }
+      },
 
     methods: {
 
-        toggleClass() {
-            this.sdfGoldC = true;
-        },
+        // searchMovie() {
+        //     let apiSearchTitle = this.inputText;
+        //     return apiSearchTitle;
+        // }
 
-        handleAddandToggleClick() {
-        /* call two methods. */
-        this.addFilm();
-        this.toggleClass();
-        },
-
-    },
-
-    computed: {
-
-
+        updateValue (value) {
+            this.$emit('input', value)
+          }
 
     },
+
+    // computed: {
+
+
+
+    // },
 
     mounted() {
-        axios.get('https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/tt7131622', {
+
+        const apiUrl = 'https://imdb-internet-movie-database-unofficial.p.rapidapi.com/';
+        let apiSearchFilm = 'film/';
+        let apiSearchTitle = this.inputText;
+        let url = apiUrl + apiSearchFilm + apiSearchTitle;
+
+        axios.get( url, {
             "headers": {
                 "x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com",
                 "x-rapidapi-key": "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"

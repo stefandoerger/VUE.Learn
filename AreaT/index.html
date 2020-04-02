@@ -34,14 +34,6 @@
                         </li> -->
                     </ul>
 
-                    <form class="form-inline my-2 my-lg-0">
-
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model="inputtext" aria-label="Search">
-                        <button :class="className" class="tn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-
-                    </form>
-
-
 
                 </div>
             </nav>
@@ -52,11 +44,22 @@
                     <div class="col">
                         <div class="content">
 
-                            <div class="input-container my-5">
-                                <input type="text" placeholder="Type a name" v-model="authorNameSearchString" />
-                            </div>
+                            <h1>Film Search</h2>
+                            <p>(via ImdB-ID)</p>
 
-                            <h2>Cast</h2>
+
+                            <form class="form-inline my-2 my-lg-0">
+
+                                <input class="form-control mr-sm-2" type="search" placeholder="Enter IMDb-DI (i. e. tt6105098)" v-model="inputText" :value="value" v-on:input="searchMovie" aria-label="Search">
+
+                                <!-- <button :class="className" class="tn btn-outline-success my-2 my-sm-0" @click="searchMovie">Search</button> -->
+
+                            </form>
+
+
+                            <p class="my-4"> This is {{ inputText }} </p>
+
+
 
                             <li class="photo" v-for="photo in filteredPhotoFeed" v-bind:key="photo.id">
                                 <span class="author">{{ onceUponaTime.title }}</span>
@@ -69,7 +72,6 @@
                                 </div> -->
 
                                 <div class="col-sm-6">
-                                    <h2>Film of the Week (via API)</h2>
                                     <h3>{{ onceUponaTime.title }} {{ onceUponaTime.year }}</h3>
 
                                     <!-- <film-cast></film-cast> -->
@@ -102,7 +104,7 @@
                         </div>
 
 
-                        <small>Today is <span v-text="new Date()"></span>, to be precisely precise.</small>
+                        <!-- <small>Today is <span v-text="new Date()"></span>, to be precisely precise.</small> -->
 
                     </div>
                 </div>
