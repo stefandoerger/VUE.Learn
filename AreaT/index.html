@@ -65,7 +65,7 @@
 
                             <small>(i. e. <a @click="exampleMovie"> {{ exampleInput }} </a> )</small>
 
-                            <div class="row">
+                            <div class="row d-block d-sm-none">
                                 <div class="col">
                                     <h2 class="sdfGoldText mt-2">
                                         {{ apiFilm.title }}
@@ -82,7 +82,9 @@
                                 <div class="col-sm-6">
 
                                     <!-- <film-cast></film-cast> -->
-
+                                    <h2 class="sdfGoldText d-none d-sm-block mt-2">
+                                        {{ apiFilm.title }}
+                                    </h2>
 
                                     <div class="table-responsive" v-if="apiFilm.length">
                                         <table class="table table-striped table-sm">
