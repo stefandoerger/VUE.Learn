@@ -8,7 +8,7 @@ let app = new Vue({
         className: 'sdfGold',
         inputText: '',
         apiSearchTitel: '',
-        onceUponaTime: [],
+        apiFilm: [],
         // ID example: tt0475784
         // ID example 2: tt7286456
     },
@@ -45,7 +45,7 @@ let app = new Vue({
                 "x-rapidapi-key": "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"
                 }
             }).then(response => {
-                this.onceUponaTime = response.data
+                this.apiFilm = response.data
             });
         }
     },
