@@ -17,7 +17,7 @@
                 </button>
                 <a class="navbar-brand bralink" href="#">
                     {{ title }}
-                    <img class="logo" src="src/assets/img/filmLogo.png" alt="">
+                    <img class="logo" src="/VUE.Learn/AreaT/src/assets/img/filmLogo.svg" alt="">
                     <span> to {{ inputText }}</span>
                 </a>
 
@@ -50,7 +50,8 @@
 
                             <form class="form-inline my-2 my-lg-0">
 
-                                <input class="form-control mr-sm-2" type="search" placeholder="Enter IMDb-DI (i. e. tt6105098)" v-model="inputText" aria-label="Search">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Enter IMDb-DI (i. e. tt6105098)" v-model="inputText" v-on:input="searchMovie" aria-label="Search">
+                                <!-- :value="value" -->
 
                                 <button :class="className" class="tn btn-outline-success my-2 my-sm-0" @click="searchMovie">Search</button>
 
@@ -60,12 +61,16 @@
                             <p class="my-4"> This is {{ inputText }} </p>
 
 
-
-                            <!-- <li class="photo" v-for="photo in filteredPhotoFeed" v-bind:key="photo.id">
+<!--
+                            <li class="photo" v-for="photo in filteredPhotoFeed" v-bind:key="photo.id">
                                 <span class="author">{{ onceUponaTime.title }}</span>
                             </li> -->
 
                             <div class="row">
+
+                                <!-- <div class="col-sm-6">
+                                    <img v-bind:src="onceUponaTime.poster" class="img-fluid" alt="Responsive image">
+                                </div> -->
 
                                 <div class="col-sm-6">
                                     <h3>{{ onceUponaTime.title }} {{ onceUponaTime.year }}</h3>
@@ -120,7 +125,5 @@
 
         <script type="text/javascript" src="src/app.js"></script>
         <script type="text/javascript" src="src/components/filmoftheweek.js"></script>
-        <!-- <script type="text/javascript" src="src/assets/js/main.js"></script> -->
-
     </body>
 </html>

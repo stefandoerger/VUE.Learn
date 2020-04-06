@@ -6,11 +6,11 @@ let app = new Vue({
         title: 'sdF',
         subtitle: 'SD Film Data Base',
         className: 'sdfGold',
-        inputText: 'tt0475784',
-        // tt6105098
-        // tt0475784
-
+        inputText: '',
+        apiSearchTitel: '',
         onceUponaTime: [],
+        // ID example: tt0475784
+        // ID example 2: tt7286456
     },
 
     props: {
@@ -20,52 +20,38 @@ let app = new Vue({
       },
 
     methods: {
-
         searchMovie() {
-
-        const apiUrl = 'https://imdb-internet-movie-database-unofficial.p.rapidapi.com/';
-        let apiSearchFilm = 'film/';
-        let apiSearchTitle = this.inputText;
-        let url = apiUrl + apiSearchFilm + apiSearchTitle;
-
-        axios.get( url, {
-            "headers": {
-                "x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com",
-                "x-rapidapi-key": "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"
-            }
-        }).then(response => {
-            this.onceUponaTime = response.data
-        });
-
+            let apiSearchTitle = this.inputText;
+            this.apiSearchTitle = this.inputText;
+            this.get()
         },
 
         // updateValue (value) {
-        //     this.$emit('input', value)
-        //   }
+        //  this.$emit('input', value)
+        // },
 
-    },
+        get() {
+            if (this.apiSearchTitle == '') return;
 
-    // computed: {
+            const apiUrl = 'https://imdb-internet-movie-database-unofficial.p.rapidapi.com/';
+            let apiSearchFilm = 'film/';
 
+            //let apiSearchTitle = this.movie;
+            let url = apiUrl + apiSearchFilm + this.apiSearchTitle;
 
-
-    // },
-
-    mounted() {
-
-        const apiUrl = 'https://imdb-internet-movie-database-unofficial.p.rapidapi.com/';
-        let apiSearchFilm = 'film/';
-        let apiSearchTitle = this.inputText;
-        let url = apiUrl + apiSearchFilm + apiSearchTitle;
-
-        axios.get( url, {
-            "headers": {
+            axios.get( url, {
+                "headers": {
                 "x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com",
                 "x-rapidapi-key": "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"
-            }
-        }).then(response => {
-            this.onceUponaTime = response.data
-        });
+                }
+            }).then(response => {
+                this.onceUponaTime = response.data
+            });
+        }
+    },
+
+    mounted() {
+        this.get();
     }
 
 });
