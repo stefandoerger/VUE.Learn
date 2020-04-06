@@ -6,7 +6,7 @@ let app = new Vue({
         title: 'sdF',
         subtitle: 'SD Film Data Base',
         className: 'sdfGold',
-        inputText: '',
+        inputText: 'tt6105098',
 
         onceUponaTime: [],
     },
@@ -19,10 +19,10 @@ let app = new Vue({
 
     methods: {
 
-        // searchMovie() {
-        //     let apiSearchTitle = this.inputText;
-        //     return apiSearchTitle;
-        // }
+        searchMovie() {
+            let apiSearchTitle = this.inputText;
+            return apiSearchTitle;
+        },
 
         updateValue (value) {
             this.$emit('input', value)

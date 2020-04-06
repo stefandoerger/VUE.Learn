@@ -18,7 +18,7 @@
                 <a class="navbar-brand bralink" href="#">
                     {{ title }}
                     <img class="logo" src="/VUE.Learn/AreaT/src/assets/img/filmLogo.svg" alt="">
-                    <span> to {{ inputtext }}</span>
+                    <span> to {{ inputText }}</span>
                 </a>
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -50,7 +50,7 @@
 
                             <form class="form-inline my-2 my-lg-0">
 
-                                <input class="form-control mr-sm-2" type="search" placeholder="Enter IMDb-DI (i. e. tt6105098)" v-model="inputText" :value="value" v-on:input="searchMovie" aria-label="Search">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Enter IMDb-DI (i. e. tt6105098)" v-model="inputText" v-on:input="searchMovie" aria-label="Search">
 
                                 <!-- <button :class="className" class="tn btn-outline-success my-2 my-sm-0" @click="searchMovie">Search</button> -->
 
@@ -61,15 +61,11 @@
 
 
 
-                            <li class="photo" v-for="photo in filteredPhotoFeed" v-bind:key="photo.id">
+                            <!-- <li class="photo" v-for="photo in filteredPhotoFeed" v-bind:key="photo.id">
                                 <span class="author">{{ onceUponaTime.title }}</span>
-                            </li>
+                            </li> -->
 
                             <div class="row">
-
-                                <!-- <div class="col-sm-6">
-                                    <img v-bind:src="onceUponaTime.poster" class="img-fluid" alt="Responsive image">
-                                </div> -->
 
                                 <div class="col-sm-6">
                                     <h3>{{ onceUponaTime.title }} {{ onceUponaTime.year }}</h3>
@@ -124,8 +120,7 @@
 
         <script type="text/javascript" src="src/app.js"></script>
         <script type="text/javascript" src="src/components/filmoftheweek.js"></script>
-        <script type="text/javascript" src="src/components/actor-list.js"></script>
-        <script type="text/javascript" src="src/assets/js/main.js"></script>
+        <!-- <script type="text/javascript" src="src/assets/js/main.js"></script> -->
 
     </body>
 </html>
