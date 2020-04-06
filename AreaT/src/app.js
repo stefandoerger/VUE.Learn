@@ -6,6 +6,8 @@ let app = new Vue({
         title: 'sdF',
         subtitle: 'SD Film Data Base',
         className: 'sdfGold',
+        exampleInput: 'tt0475784',
+        titleState: false,
         inputText: '',
         apiSearchTitel: '',
         apiFilm: [],
@@ -14,16 +16,28 @@ let app = new Vue({
     },
 
     props: {
-        value: {
-          type: String
-        }
+        // value: {
+        //   type: String
+        // }
       },
 
     methods: {
         searchMovie() {
             let apiSearchTitle = this.inputText;
             this.apiSearchTitle = this.inputText;
-            this.get()
+            this.get();
+
+
+            this.titleState = true
+        },
+
+        exampleMovie() {
+            let apiSearchTitle = this.exampleInput;
+            this.apiSearchTitle = this.exampleInput;
+            this.get();
+
+
+            this.titleState = true
         },
 
         // updateValue (value) {
@@ -51,7 +65,7 @@ let app = new Vue({
     },
 
     mounted() {
-        this.get();
+        // this.get();
     }
 
 });
