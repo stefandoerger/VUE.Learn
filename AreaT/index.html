@@ -50,7 +50,6 @@
 
                             <form class="form-inline my-2 my-lg-0">
 
-<<<<<<< HEAD
                                 <input class="form-control mr-sm-2" type="search" placeholder="Enter IMDb-DI (i. e. tt6105098)" v-model="inputText" v-on:input="searchMovie" aria-label="Search">
                                 <!-- :value="value" -->
 
@@ -66,13 +65,6 @@
                             <li class="photo" v-for="photo in filteredPhotoFeed" v-bind:key="photo.id">
                                 <span class="author">{{ onceUponaTime.title }}</span>
                             </li> -->
-=======
-                            <h2>Resluts</h2>
-
-                            <li class="photo" v-for="photo in filteredPhotoFeed" v-bind:key="photo.title">
-                                <span class="author">{{ photo.title }}</span>
-                            </li>
->>>>>>> 0a00498c05d163fd9e1bf25493b6972315d70c8a
 
                             <div class="row">
 
@@ -86,7 +78,7 @@
                                     <!-- <film-cast></film-cast> -->
 
 
-                                    <!-- <div class="table-responsive" v-if="onceUponaTime.length">
+                                    <div class="table-responsive" v-if="onceUponaTime.length">
                                         <table class="table table-striped table-sm">
                                             <thead>
                                                 <tr>
@@ -103,7 +95,7 @@
                                             </tbody>
 
                                         </table>
-                                    </div> -->
+                                    </div>
 
                                 </div>
                             </div>
@@ -133,10 +125,5 @@
 
         <script type="text/javascript" src="src/app.js"></script>
         <script type="text/javascript" src="src/components/filmoftheweek.js"></script>
-<<<<<<< HEAD
-=======
-        <!-- <script type="text/javascript" src="src/assets/js/main.js"></script> -->
-
->>>>>>> 0a00498c05d163fd9e1bf25493b6972315d70c8a
     </body>
 </html>
