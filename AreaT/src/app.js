@@ -6,7 +6,9 @@ let app = new Vue({
         title: 'sdF',
         subtitle: 'SD Film Data Base',
         className: 'sdfGold',
-        inputText: 'tt6105098',
+        inputText: 'tt0475784',
+        // tt6105098
+        // tt0475784
 
         onceUponaTime: [],
     },
@@ -20,13 +22,26 @@ let app = new Vue({
     methods: {
 
         searchMovie() {
-            let apiSearchTitle = this.inputText;
-            return apiSearchTitle;
+
+        const apiUrl = 'https://imdb-internet-movie-database-unofficial.p.rapidapi.com/';
+        let apiSearchFilm = 'film/';
+        let apiSearchTitle = this.inputText;
+        let url = apiUrl + apiSearchFilm + apiSearchTitle;
+
+        axios.get( url, {
+            "headers": {
+                "x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com",
+                "x-rapidapi-key": "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"
+            }
+        }).then(response => {
+            this.onceUponaTime = response.data
+        });
+
         },
 
-        updateValue (value) {
-            this.$emit('input', value)
-          }
+        // updateValue (value) {
+        //     this.$emit('input', value)
+        //   }
 
     },
 

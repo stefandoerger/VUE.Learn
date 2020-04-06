@@ -17,7 +17,7 @@
                 </button>
                 <a class="navbar-brand bralink" href="#">
                     {{ title }}
-                    <img class="logo" src="/VUE.Learn/AreaT/src/assets/img/filmLogo.svg" alt="">
+                    <img class="logo" src="src/assets/img/filmLogo.png" alt="">
                     <span> to {{ inputText }}</span>
                 </a>
 
@@ -50,9 +50,9 @@
 
                             <form class="form-inline my-2 my-lg-0">
 
-                                <input class="form-control mr-sm-2" type="search" placeholder="Enter IMDb-DI (i. e. tt6105098)" v-model="inputText" v-on:input="searchMovie" aria-label="Search">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Enter IMDb-DI (i. e. tt6105098)" v-model="inputText" aria-label="Search">
 
-                                <!-- <button :class="className" class="tn btn-outline-success my-2 my-sm-0" @click="searchMovie">Search</button> -->
+                                <button :class="className" class="tn btn-outline-success my-2 my-sm-0" @click="searchMovie">Search</button>
 
                             </form>
 
