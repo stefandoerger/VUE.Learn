@@ -59,17 +59,17 @@
 
                                 <input class="form-control mr-sm-2" type="search" placeholder="Enter ImbB-ID" v-model="apiSearchID" aria-label="Search">
 
-                                <button :class="className" type="button" class="btn btn-outline-success my-2 my-sm-0" @click="searchMovieID">Search</button> -->
+                                <button :class="className" type="button" class="btn btn-outline-success my-2 my-sm-0" @click="searchMovieID">Search</button>
 
-                            </form>
+                            </form> -->
 
-                            <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+
 
                             <!-- Search by Title -->
                             <p>(via Film Title)</p>
                             <form class="form-inline my-2 my-lg-0">
 
-                                <input class="form-control mr-sm-2" type="search" placeholder="Enter film title" v-model="apiSearchID" aria-label="Search">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Enter film title" v-model="apiSearchTitle" aria-label="Search">
 
                                 <button :class="className" type="button" class="btn btn-outline-success my-2 my-sm-0" @click="searchMovieTitle">Search</button>
 
@@ -77,15 +77,35 @@
 
                             <small>(i. e. <a @click="exampleMovie"> {{ exampleInput }} </a>, tt7286456)</small>
 
-                            <div class="row mt-4">
+                            <!-- <div class="row mt-4">
                                 <div class="col d-block d-sm-none">
                                     <h2 class="sdfGoldText mt-2">
                                         {{ apiFilm.title }}
                                     </h2>
                                 </div>
-                            </div>
+                            </div> -->
+
+                            <!-- <p> {{ apiSearch.titles }} </p> -->
 
                             <div class="row">
+                                <div class="col">
+
+
+                                    <!-- <div v-if="apiSearch.length"> -->
+
+                                            <ul v-for="titles in apiSearch.titles">
+                                                  <li>{{ titles.title }}</li>
+                                            </ul>
+
+                                    <!-- </div> -->
+
+
+                                </div>
+                            </div>
+
+
+
+                            <!-- <div class="row">
 
                                 <div class="col-sm-6">
                                     <img v-bind:src="apiFilm.poster" class="filmPoster img-fluid" alt="">
@@ -93,7 +113,6 @@
 
                                 <div class="col-sm-6">
 
-                                    <!-- <film-cast></film-cast> -->
                                     <h2 class="sdfGoldText d-none d-sm-block mt-2">
                                         {{ apiFilm.title }}
                                     </h2>
@@ -155,7 +174,7 @@
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- <filmoftheweek></filmoftheweek> -->
 

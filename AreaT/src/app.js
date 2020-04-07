@@ -12,6 +12,7 @@ let app = new Vue({
         apiSearchID: '',
         apiSearchTitle: '',
         apiFilm: [],
+        apiSearch: [],
         // ID example: tt0475784
         // ID example 2: tt7286456
     },
@@ -25,7 +26,7 @@ let app = new Vue({
     methods: {
         searchMovieTitle() {
             // let apiSearchTitle = this.inputText;
-            this.getTitle(this.apiSearchID);
+            this.getTitle(this.apiSearchTitle);
 
             // Title in Navbar changes from Input to film title
             this.titleState = true
@@ -56,7 +57,7 @@ let app = new Vue({
             // if (this.apiSearchTitle == '') return;
 
             const apiUrl = 'https://imdb-internet-movie-database-unofficial.p.rapidapi.com/';
-            let apiSearchFilm = 'film/';
+            let apiSearchFilm = 'search/';
 
             //let apiSearchTitle = this.movie;
             let url = apiUrl + apiSearchFilm + apiSearchTitle;
@@ -67,7 +68,7 @@ let app = new Vue({
                 "x-rapidapi-key": "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"
                 }
             }).then(response => {
-                this.apiFilm = response.data
+                this.apiSearch = response.data
             });
         }
 
