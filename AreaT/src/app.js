@@ -24,9 +24,7 @@ let app = new Vue({
     methods: {
         searchMovieID() {
             // let apiSearchTitle = this.inputText;
-            // this.apiSearchTitle = this.apiSearchTitle;
-            let apiSearchTitle = this.apiSearchTitle;
-            this.get(apiSearchTitle);
+            this.get(this.apiSearchTitel);
 
             // Title in Navbar changes from Input to film title
             this.titleState = true
