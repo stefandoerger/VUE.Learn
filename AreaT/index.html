@@ -57,13 +57,13 @@
 
                             <form class="form-inline my-2 my-lg-0">
 
-                                <input class="form-control mr-sm-2" type="search" placeholder="Enter IMDb-DI" v-model="inputText" aria-label="Search">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Enter IMDb-ID" v-model="apiSearchTitel" aria-label="Search">
 
-                                <button :class="className" type="button" class="btn btn-outline-success my-2 my-sm-0" @click="searchMovie">Search</button>
+                                <button :class="className" type="button" class="btn btn-outline-success my-2 my-sm-0" @click="searchMovieID">Search</button>
 
                             </form>
 
-                            <small>(i. e. <a @click="exampleMovie"> {{ exampleInput }} </a> )</small>
+                            <small>(i. e. <a @click="exampleMovie"> {{ exampleInput }} </a>, tt7286456)</small>
 
                             <div class="row mt-4">
                                 <div class="col d-block d-sm-none">

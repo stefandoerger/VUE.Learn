@@ -22,21 +22,22 @@ let app = new Vue({
       },
 
     methods: {
-        searchMovie() {
-            let apiSearchTitle = this.inputText;
-            this.apiSearchTitle = this.inputText;
-            this.get();
+        searchMovieID() {
+            // let apiSearchTitle = this.inputText;
+            // this.apiSearchTitle = this.apiSearchTitle;
+            let apiSearchTitle = this.apiSearchTitle;
+            this.get(apiSearchTitle);
 
-
+            // Title in Navbar changes from Input to film title
             this.titleState = true
         },
 
         exampleMovie() {
             let apiSearchTitle = this.exampleInput;
             this.apiSearchTitle = this.exampleInput;
-            this.get();
+            this.get(apiSearchTitle);
 
-
+            // Title in Navbar changes from Input to film title
             this.titleState = true
         },
 
@@ -44,14 +45,15 @@ let app = new Vue({
         //  this.$emit('input', value)
         // },
 
-        get() {
-            if (this.apiSearchTitle == '') return;
+        get(apiSearchTitle) {
+            // let apiSearchTitle = this.apiSearchTitle;
+            // if (this.apiSearchTitle == '') return;
 
             const apiUrl = 'https://imdb-internet-movie-database-unofficial.p.rapidapi.com/';
             let apiSearchFilm = 'film/';
 
             //let apiSearchTitle = this.movie;
-            let url = apiUrl + apiSearchFilm + this.apiSearchTitle;
+            let url = apiUrl + apiSearchFilm + apiSearchTitle;
 
             axios.get( url, {
                 "headers": {
