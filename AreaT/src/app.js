@@ -9,7 +9,7 @@ let app = new Vue({
         exampleInput: 'tt0475784',
         titleState: false,
         inputText: '',
-        apiSearchTitel: '',
+        apiSearchID: '',
         apiFilm: [],
         // ID example: tt0475784
         // ID example 2: tt7286456
@@ -24,16 +24,15 @@ let app = new Vue({
     methods: {
         searchMovieID() {
             // let apiSearchTitle = this.inputText;
-            this.get(this.apiSearchTitel);
+            this.get(this.apiSearchID);
 
             // Title in Navbar changes from Input to film title
             this.titleState = true
         },
 
         exampleMovie() {
-            let apiSearchTitle = this.exampleInput;
-            this.apiSearchTitle = this.exampleInput;
-            this.get(apiSearchTitle);
+            this.apiSearchID = this.exampleInput;
+            this.get(this.apiSearchID);
 
             // Title in Navbar changes from Input to film title
             this.titleState = true

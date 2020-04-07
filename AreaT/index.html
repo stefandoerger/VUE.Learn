@@ -23,7 +23,7 @@
                         {{ apiFilm.title }}
                     </span>
                     <span class="navTitle" v-else>
-                        {{ apiSearchTitel }}
+                        {{ apiSearchID }}
                     </span>
 
                 </a>
@@ -57,7 +57,7 @@
 
                             <form class="form-inline my-2 my-lg-0">
 
-                                <input class="form-control mr-sm-2" type="search" placeholder="Enter IMDb-ID" v-model="apiSearchTitel" aria-label="Search">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Enter film title" v-model="apiSearchID" aria-label="Search">
 
                                 <button :class="className" type="button" class="btn btn-outline-success my-2 my-sm-0" @click="searchMovieID">Search</button>
 
