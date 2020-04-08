@@ -51,7 +51,7 @@
                     <div class="col">
                         <div class="content">
 
-                            <h1>Film Search</h2>
+                            <h1>Film Search</h1>
 
                             <!-- Search by ID -->
                             <!-- <p>(via ImdB-ID)</p>
@@ -87,21 +87,39 @@
 
                             <!-- <p> {{ apiSearch.titles }} </p> -->
 
-                            <div class="row">
-                                <div class="col">
+                            <!-- <div class="row">
 
+                                <div v-for="titles in apiSearch.titles">
 
-                                    <!-- <div v-if="apiSearch.length"> -->
-
-                                            <ul v-for="titles in apiSearch.titles">
-                                                  <li>{{ titles.title }}</li>
-                                            </ul>
-
-                                    <!-- </div> -->
-
+                                    <div class="col-sm-6">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">  {{titles.title }}  </h5>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
-                            </div>
+
+                            </div> -->
+
+
+                            <div class="row mt-3">
+                            <!-- <div class="row mt-3" v-if="apiSearch.length"> -->
+
+                                    <div v-for="titles in apiSearch.titles" class="col-md-4 my-2">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <img class="card-img-top" v-bind:src="titles.image" alt="Card image cap">
+
+                                                <h5 class="card-title mt-2"> {{ titles.title }} </h5>
+                                                <a href="#" class="btn btn-primary mt-2">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                              </div>
 
 
 
