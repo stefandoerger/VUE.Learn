@@ -31,14 +31,8 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                        <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+
                         </li>
-                        <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                        </li> -->
                     </ul>
 
 
@@ -53,19 +47,6 @@
 
                             <h1>Film Search</h1>
 
-                            <!-- Search by ID -->
-                            <!-- <p>(via ImdB-ID)</p>
-                            <form class="form-inline my-2 my-lg-0">
-
-                                <input class="form-control mr-sm-2" type="search" placeholder="Enter ImbB-ID" v-model="apiSearchID" aria-label="Search">
-
-                                <button :class="className" type="button" class="btn btn-outline-success my-2 my-sm-0" @click="searchMovieID">Search</button>
-
-                            </form> -->
-
-
-
-                            <!-- Search by Title -->
                             <p>(via Film Title)</p>
                             <form class="form-inline my-2 my-lg-0">
 
@@ -95,85 +76,7 @@
 
                               </div>
 
-
-
-                            <!-- <div class="row">
-
-                                <div class="col-sm-6">
-                                    <img v-bind:src="apiFilm.poster" class="filmPoster img-fluid" alt="">
-                                </div>
-
-                                <div class="col-sm-6">
-
-                                    <h2 class="sdfGoldText d-none d-sm-block mt-2">
-                                        {{ apiFilm.title }}
-                                    </h2>
-
-                                    <div class="table-responsive" v-if="apiFilm.length">
-                                        <table class="table table-striped table-sm">
-
-                                            <tbody>
-
-                                            <thead>
-                                                <tr>
-                                                    <th>Stats</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-
-                                              <tr>
-                                                  <td>Year</td>
-                                                  <td class="character">{{ apiFilm.year }}</td>
-                                              </tr>
-
-                                              <tr>
-                                                  <td>Lenght</td>
-                                                  <td class="character">{{ apiFilm.length }}</td>
-                                              </tr>
-
-                                              <tr>
-                                                  <td>ImdB-Rating</td>
-                                                  <td class="character">{{ apiFilm.rating }} (of {{ apiFilm.rating_votes }} votes) </td>
-                                              </tr>
-
-                                            </tbody>
-
-                                        </table>
-
-                                        <p>
-                                            "{{ apiFilm.plot }}"
-                                        </p>
-
-                                    </div>
-
-                                    <div class="table-responsive mt-4" v-if="apiFilm.length">
-                                        <table class="table table-striped table-sm">
-                                            <thead>
-                                                <tr>
-                                                    <th>Actor Name</th>
-                                                    <th class="character">Role in Film</th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody v-for="cast in apiFilm.cast">
-                                              <tr>
-                                                  <td>{{ cast.actor }}</td>
-                                                  <td class="character">"{{ cast.character }}"</td>
-                                              </tr>
-                                            </tbody>
-
-                                        </table>
-                                    </div>
-
-                                </div>
-                            </div> -->
-
-                            <!-- <filmoftheweek></filmoftheweek> -->
-
                         </div>
-
-
-                        <!-- <small>Today is <span v-text="new Date()"></span>, to be precisely precise.</small> -->
 
                     </div>
                 </div>
