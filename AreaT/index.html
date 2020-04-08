@@ -48,9 +48,10 @@
                             <h1>Film Search</h1>
 
                             <p>(via Film Title)</p>
-                            <form class="form-inline my-2 my-lg-0">
 
-                                <input class="form-control mr-sm-2" type="search" placeholder="Enter film title" v-model="apiSearchTitle" aria-label="Search">
+                            <form v-on:submit.prevent class="form-inline my-2 my-lg-0">
+
+                                <input class="form-control mr-sm-2" type="search" placeholder="Enter film title" v-model="apiSearchTitle" v-on:keyup.enter="searchMovieTitle" onSubmit="return false;" aria-label="Search">
 
                                 <button :class="className" type="button" class="btn btn-outline-success my-2 my-sm-0" @click="searchMovieTitle">Search</button>
 
@@ -96,5 +97,6 @@
 
         <script type="text/javascript" src="src/app.js"></script>
         <script type="text/javascript" src="src/components/filmoftheweek.js"></script>
+
     </body>
 </html>
