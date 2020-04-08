@@ -75,48 +75,22 @@
 
                             </form>
 
-                            <small>(i. e. <a @click="exampleMovie"> {{ exampleInput }} </a>, tt7286456)</small>
-
-                            <!-- <div class="row mt-4">
-                                <div class="col d-block d-sm-none">
-                                    <h2 class="sdfGoldText mt-2">
-                                        {{ apiFilm.title }}
-                                    </h2>
-                                </div>
-                            </div> -->
-
-                            <!-- <p> {{ apiSearch.titles }} </p> -->
-
-                            <!-- <div class="row">
-
-                                <div v-for="titles in apiSearch.titles">
-
-                                    <div class="col-sm-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h5 class="card-title">  {{titles.title }}  </h5>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div> -->
+                            <small>(i. e. <a @click="ExampleSearchMovieTitle"> {{ ExampleSearchInput }} </a>)</small>
 
 
                             <div class="row mt-3">
                             <!-- <div class="row mt-3" v-if="apiSearch.length"> -->
 
-                                    <div v-for="titles in apiSearch.titles" class="col-md-4 my-2">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <img class="card-img-top" v-bind:src="titles.image" alt="Card image cap">
-
-                                                <h5 class="card-title mt-2"> {{ titles.title }} </h5>
-                                                <a href="#" class="btn btn-primary mt-2">Go somewhere</a>
+                                    <div v-for="titles in apiSearch.titles" class="col-md-6 my-2">
+                                            <div class="row no-gutters">
+                                                <div class="col-6">
+                                                    <img class="img-fluid" v-bind:src="titles.image" alt="Card image cap">
+                                                </div>
+                                                <div class="col-6 p-3 filmCard">
+                                                    <h5 class=" mt-2"> {{ titles.title }} </h5>
+                                                    <button :class="className" type="button" class="btn btn-outline-success my-2 my-sm-0"> Go to {{ titles.id }} </button>
+                                                </div>
                                             </div>
-                                        </div>
                                     </div>
 
                               </div>

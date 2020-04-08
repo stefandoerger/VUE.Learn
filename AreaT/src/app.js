@@ -11,6 +11,7 @@ let app = new Vue({
         inputText: '',
         apiSearchID: '',
         apiSearchTitle: '',
+        ExampleSearchInput: 'The Lord of the Rings:',
         apiFilm: [],
         apiSearch: [],
         // ID example: tt0475784
@@ -31,26 +32,13 @@ let app = new Vue({
             // Title in Navbar changes from Input to film title
             this.titleState = true
         },
-
-        // searchMovieID() {
-        //     // let apiSearchTitle = this.inputText;
-        //     this.get(this.apiSearchID);
-
-        //     // Title in Navbar changes from Input to film title
-        //     this.titleState = true
-        // },
-
-        exampleMovie() {
-            this.apiSearchID = this.exampleInput;
-            this.get(this.apiSearchID);
+        ExampleSearchMovieTitle() {
+            // let apiSearchTitle = this.inputText;
+            this.getTitle(this.ExampleSearchInput);
 
             // Title in Navbar changes from Input to film title
             this.titleState = true
         },
-
-        // updateValue (value) {
-        //  this.$emit('input', value)
-        // },
 
         getTitle(apiSearchTitle) {
             // let apiSearchTitle = this.apiSearchTitle;

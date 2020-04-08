@@ -8,8 +8,7 @@ body {
 
 h1,
 .bralink,
-.btn-outline-success,
-.card a {
+.btn-outline-success {
     color: #ffd700;
     border-color: #ffd700;
 }
@@ -33,8 +32,7 @@ td {
     color: #fdfdfd;
 }
 
-.sdfGold,
-.card a {
+.sdfGold {
     background-color: #ffd700;
     color: #1b283e;
 }
@@ -116,7 +114,20 @@ td {
     background-color: #1b283e;
 }
 
-.card h5 {
-    min-height: 3em;
+.filmCard {
+    position: relative;
+    background-color: #1b283e;
 }
 
+.filmCard button {
+    position: absolute;
+    bottom: 2em;
+}
+
+.filmCard button:hover,
+.filmCard button:focus,
+.filmCard button:scope {
+    background-color: #1b283e!important;
+    color: #ffd700!important;
+    border-color: #ffd700!important;
+}
