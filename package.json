@@ -1,0 +1,28 @@
+{
+  "name": "nodeone",
+  "version": "1.0.0",
+  "description": "Just a test",
+  "main": "index.js",
+  "scripts": {
+    "test": "// app.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefandoerger/nodeOne.git"
+  },
+  "author": "sdCode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefandoerger/nodeOne/issues"
+  },
+  "homepage": "https://github.com/stefandoerger/nodeOne#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1",
+    "vue": "^2.6.11"
+  }
+}
