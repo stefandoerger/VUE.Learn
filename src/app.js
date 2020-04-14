@@ -14,7 +14,7 @@ let app = new Vue({
         ExampleSearchInput: 'The Lord of the Rings:',
         apiFilm: [],
         apiSearch: [],
-        urlID: '<%= ImdBTitleVar %>',
+        urlID: '',
         // ID example: tt0475784
         // ID example 2: tt7286456
     },
