@@ -59,31 +59,29 @@ let app = new Vue({
             }).then(response => {
                 this.apiSearch = response.data
             });
+        },
+
+        get(apiSearchFilmID) {
+
+            const apiUrl = 'https://imdb-internet-movie-database-unofficial.p.rapidapi.com/';
+            let apiSearchFilm = 'film/';
+
+            //let apiSearchTitle = this.movie;
+            let url = apiUrl + apiSearchFilm + apiSearchFilmID;
+
+            axios.get( url, {
+                "headers": {
+                "x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com",
+                "x-rapidapi-key": "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"
+                }
+            }).then(response => {
+                this.apiFilm = response.data
+            });
         }
-
-        // get(apiSearchTitle) {
-        //     // let apiSearchTitle = this.apiSearchTitle;
-        //     // if (this.apiSearchTitle == '') return;
-
-        //     const apiUrl = 'https://imdb-internet-movie-database-unofficial.p.rapidapi.com/';
-        //     let apiSearchFilm = 'film/';
-
-        //     //let apiSearchTitle = this.movie;
-        //     let url = apiUrl + apiSearchFilm + apiSearchTitle;
-
-        //     axios.get( url, {
-        //         "headers": {
-        //         "x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com",
-        //         "x-rapidapi-key": "f506e8b5f3msh939f5126945ac27p103d2ajsn0011d85c92ab"
-        //         }
-        //     }).then(response => {
-        //         this.apiFilm = response.data
-        //     });
-        // }
     },
 
     mounted() {
-        // this.get();
+        this.get();
     }
 
 });
