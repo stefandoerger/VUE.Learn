@@ -17,9 +17,9 @@ app.get("/", function(req, res) {
 
 // Works with variables
 app.get("/film/:ImdBTitle", function(req, res) {
-    let ImdBTitle = req.params.ImdBTitle;
+    let imdBTitle = req.params.ImdBTitle;
 
-    res.render("film.ejs", {ImdBTitleVar: ImdBTitle});
+    res.render("film.ejs", {imdBTitle: imdBTitle});
 })
 
 // Routes everything else except above

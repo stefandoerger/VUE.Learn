@@ -11,6 +11,7 @@ let app = new Vue({
         inputText: '',
         apiSearchID: '',
         apiSearchTitle: '',
+        imdBTitle: '',
         ExampleSearchInput: 'The Lord of the Rings:',
         apiFilm: [],
         apiSearch: [],
@@ -61,13 +62,14 @@ let app = new Vue({
             });
         },
 
-        get(apiSearchFilmID) {
+        get(imdBTitle) {
+            // let imdBTitle = this.imdBTitle;
 
             const apiUrl = 'https://imdb-internet-movie-database-unofficial.p.rapidapi.com/';
             let apiSearchFilm = 'film/';
 
             //let apiSearchTitle = this.movie;
-            let url = apiUrl + apiSearchFilm + apiSearchFilmID;
+            let url = apiUrl + apiSearchFilm + imdBTitle;
 
             axios.get( url, {
                 "headers": {
