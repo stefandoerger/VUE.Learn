@@ -6,11 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css"> -->
         <link rel="stylesheet" type="text/css" href="src/assets/css/app.css">
+
     </head>
     <body>
 
+        <!-- VUE starts here -->
         <div id="app">
+
             <nav class="navbar navbar-expand navbar-light bg-light navbar-dark nava">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -39,47 +43,41 @@
                 </div>
             </nav>
 
+            <tabs>
+
+                <tab name="About us" :selected="true">
+                    <p>Content about us</p>
+                </tab>
+
+                <tab name="About our Culture">
+                    <p>Content about our Culture</p>
+                </tab>
+
+                <tab name="About our Vision">
+                    <p>Content about our Vision</p>
+                </tab>
+
+                <tab name="About our Toilettes">
+                    <p>Content about our Toilettes</p>
+                </tab>
+
+            </tabs>
+
+
             <div class="container">
 
                 <div class="row">
                     <div class="col">
                         <div class="content">
 
-                            <h1>Film Search</h1>
-
-                            <p>(via Film Title)</p>
-
-                            <form v-on:submit.prevent class="form-inline my-2 my-lg-0">
-
-                                <input class="form-control mr-sm-2" type="search" placeholder="Enter film title" v-model="apiSearchTitle" v-on:keyup.enter="searchMovieTitle" onSubmit="return false;" aria-label="Search">
-
-                                <button :class="className" type="button" class="btn btn-outline-success my-2 my-sm-0" @click="searchMovieTitle">Search</button>
-
-                            </form>
-
-                            <small>(i. e. <a @click="ExampleSearchMovieTitle"> {{ ExampleSearchInput }} </a>)</small>
-
-
-                            <div class="row mt-3">
-                            <!-- <div class="row mt-3" v-if="apiSearch.length"> -->
-
-                                    <div v-for="titles in apiSearch.titles" class="col-md-6 my-2">
-                                            <div class="row no-gutters">
-                                                <div class="col-6">
-                                                    <img class="img-fluid" v-bind:src="titles.image" alt="Card image cap">
-                                                </div>
-                                                <div class="col-6 p-3 filmCard">
-                                                    <h5 class=" mt-2"> {{ titles.title }} </h5>
-
-                                                    <a v-bind:href="'/film/'+ titles.id">
-                                                        <button v-bind:href="'/film/'+ titles.id" :class="className" type="button" class="btn btn-outline-success my-2 my-sm-0"> Go to {{ titles.id }} </button>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                    </div>
-
-                              </div>
-
+                            <message v-if="showModal" title="Hi" body="There">
+                            <!-- Via props in components Hi There is filled -->
+                                <p>Ahem</p>
+                            <!-- Via Slots, anything can be add here -->
+                            </message>
+                            <button @click="showModal = true">Show Modal</button>
+                            <!-- Via click on Button, showModel is set from false, to true
+                            And message will be only shown, if showModal is true -->
                         </div>
 
                     </div>
@@ -91,7 +89,6 @@
             </div>
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
