@@ -16,7 +16,7 @@ app.get("/", function(req, res) {
 })
 
 // Works with variables
-app.get("/film/:ImdBTitle", function(req, res) {
+app.get("/film/:imdBTitle", function(req, res) {
     let imdBTitle = req.params.ImdBTitle;
 
     res.render("film.ejs", {imdBTitle: imdBTitle});
